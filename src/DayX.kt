@@ -1,10 +1,7 @@
-object DayX {
-    override fun toString(): String {
-        return this.javaClass.simpleName
-    }
-}
 
 fun main() {
+    val day = "DayX"
+
     fun part1(input: List<String>): Int {
         return input.size
     }
@@ -13,8 +10,8 @@ fun main() {
         return input.size
     }
 
-    val testInput = readInput("${DayX}_test")
-    val input = readInput(DayX.toString())
+    val testInput = readInput("${day}_test")
+    val input = readInput(day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == 157)
