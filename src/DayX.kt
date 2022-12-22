@@ -14,9 +14,9 @@ fun main() {
     val input = readInput(day)
 
     // test if implementation meets criteria from the description, like:
-    check(part1(testInput) == 157)
+    check(part1(testInput) == -1)
     println(part1(input))
 
-    check(part2(testInput) == 70)
+    check(part2(testInput) == -1)
     println(part2(input))
 }
