@@ -1,4 +1,4 @@
-enum class RPS(val opponentLabel: String, val ourLabel: String, val selectionValue: Int) {
+private enum class RPS(val opponentLabel: String, val ourLabel: String, val selectionValue: Int) {
     ROCK("A", "X", 1),
     PAPER("B", "Y", 2),
     SCISSOR("C", "Z", 3);
