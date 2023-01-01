@@ -1,3 +1,7 @@
+package aoc2022
+
+import utils.readInput
+
 object Day06 {
     override fun toString(): String {
         return this.javaClass.simpleName
@@ -25,12 +29,12 @@ fun main() {
         return findIndexWithPrecedingNUniqueValues(input, 14)
     }
 
-    val testInput01 = readInput("${Day06}_test01")
-    val testInput02 = readInput("${Day06}_test02")
-    val testInput03 = readInput("${Day06}_test03")
-    val testInput04 = readInput("${Day06}_test04")
-    val testInput05 = readInput("${Day06}_test05")
-    val input = readInput(Day06.toString())
+    val testInput01 = readInput(2022, "${Day06}_test01")
+    val testInput02 = readInput(2022, "${Day06}_test02")
+    val testInput03 = readInput(2022, "${Day06}_test03")
+    val testInput04 = readInput(2022, "${Day06}_test04")
+    val testInput05 = readInput(2022, "${Day06}_test05")
+    val input = readInput(2022, Day06.toString())
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput01) == 7) { "check 1 part 1" }

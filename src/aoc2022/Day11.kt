@@ -1,3 +1,8 @@
+package aoc2022
+
+import utils.lcm
+import utils.readInputText
+
 typealias WorryLevel = Long
 fun String.toWorryLevelOrNull(): WorryLevel? = toLongOrNull()
 infix fun WorryLevel.divisibleBy(divisor: Int) = this % divisor == 0L
@@ -40,7 +45,7 @@ private fun createMonkey(input: String): Monkey {
 
     lines.map { it.trim() }.forEach { line ->
         when {
-            line.startsWith("Monkey") -> builder.name = line.removeSuffix(":")
+            line.startsWith("aoc2022.Monkey") -> builder.name = line.removeSuffix(":")
             line.startsWith("Starting items:") -> builder.items.addAll(
                 line.split(':')[1].split(", ").map { it.trim().toWorryLevelOrNull() ?: error("") }
             )
@@ -49,7 +54,7 @@ private fun createMonkey(input: String): Monkey {
 
             line.startsWith("Test:") -> Regex("""^Test: divisible by (\d+)$""").find(line)?.let {
                 builder.testDivisor = it.groupValues[1].toInt()
-            } ?: error("no regex match for test!")
+            } ?: error("no regex match for aoc2022.test!")
 
             line.startsWith("If ") -> Regex("""^If (\w+): throw to monkey (\d+)$""").find(line)?.let {
                 val trueFalse = it.groupValues[1]
@@ -110,7 +115,7 @@ private fun printMonkeyStatus(monkeys: List<Monkey>) {
 }
 
 fun main() {
-    val day = "Day11"
+    val (year, day) = 2022 to "Day11"
 
     fun part1(input: List<String>): Long {
         val monkeys = monkeys(input)
@@ -134,10 +139,10 @@ fun main() {
         return monkeys.map { it.itemsInspected }.sortedDescending().take(2).reduce { acc, i -> acc * i }
     }
 
-    val testInput = readInputText("${day}_test").split("\n\n")
-    val input = readInputText(day).split("\n\n")
+    val testInput = readInputText(year, "${day}_test").split("\n\n")
+    val input = readInputText(year, day).split("\n\n")
 
-    // test if implementation meets criteria from the description, like:
+    // aoc2022.test if implementation meets criteria from the description, like:
     check(part1(testInput) == 10605L)
     println(part1(input))
 

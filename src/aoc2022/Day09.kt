@@ -1,3 +1,6 @@
+package aoc2022
+
+import utils.readInput
 import kotlin.math.abs
 
 private data class Pos(val x: Int, val y: Int)
@@ -121,7 +124,7 @@ private class SnakeWithList(size: Int) {
 }
 
 fun main() {
-    val day = "Day09"
+    val (year, day) = 2022 to "Day09"
 
     fun part1(input: List<String>): Int {
         return Snake().also { it.consume(input.map(::parseInstruction)) }.visited()
@@ -135,8 +138,8 @@ fun main() {
         return SnakeWithList(10).also { it.consume(input.map(::parseInstruction)) }.visited()
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year, "${day}_test")
+    val input = readInput(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == 13)
@@ -147,7 +150,7 @@ fun main() {
     println("====")
     check(part2(testInput) == 1)
     println("checking alternative test input")
-    check(part2(readInput("${day}_test_part2")) == 36)
+    check(part2(readInput(year, "${day}_test_part2")) == 36)
     println("Done with test input")
 
     println(part2(input))

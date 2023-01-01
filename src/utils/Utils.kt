@@ -1,17 +1,22 @@
-import java.io.File
+package utils
+
 import java.math.BigInteger
+import java.nio.file.Paths
 import java.security.MessageDigest
+import kotlin.io.path.readLines
+import kotlin.io.path.readText
 
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = File("src", "$name.txt")
+fun readInput(year: Int, name: String) = Paths.get("src", "aoc$year", "$name.txt")
     .readLines(charset = Charsets.UTF_8)
 
 /**
  * Reads the given input txt file as a single string.
  */
-fun readInputText(name: String) = File("src", "$name.txt").readText(charset = Charsets.UTF_8)
+fun readInputText(year: Int, name: String) = Paths.get("src", "aoc$year", "$name.txt")
+    .readText(charset = Charsets.UTF_8)
 
 /**
  * Converts string to md5 hash.

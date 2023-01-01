@@ -1,3 +1,7 @@
+package aoc2022
+
+import utils.readInput
+
 object Day04 {
     override fun toString(): String {
         return this.javaClass.simpleName
@@ -44,11 +48,11 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("${Day04}_test")
+    val testInput = readInput(2022, "${Day04}_test")
     check(part1(testInput) == 2)
     check(part2(testInput) == 4)
 
-    val input = readInput(Day04.toString())
+    val input = readInput(2022, Day04.toString())
     println(part1(input))
     println(part2(input))
 }

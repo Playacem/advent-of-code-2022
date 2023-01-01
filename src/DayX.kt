@@ -1,6 +1,7 @@
+import utils.readInput
 
 fun main() {
-    val day = "DayX"
+    val (year, day) = 2022 to "DayX"
 
     fun part1(input: List<String>): Int {
         return input.size
@@ -10,8 +11,8 @@ fun main() {
         return input.size
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year = year, name = "${day}_test")
+    val input = readInput(year = year,name = "${day}_test")
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == -1)

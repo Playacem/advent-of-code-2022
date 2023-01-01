@@ -1,3 +1,6 @@
+package aoc2022
+
+import utils.readInput
 import kotlin.math.abs
 
 private sealed class Instruction {
@@ -32,7 +35,7 @@ private fun List<Int>.renderAsSingleString(): String {
 }
 
 fun main() {
-    val day = "Day10"
+    val (year, day) = 2022 to "Day10"
 
     fun cycleData(input: List<String>): List<Int> {
         var current = 1
@@ -64,8 +67,8 @@ fun main() {
         return renderedString.chunked(40).dropLast(1)
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year, "${day}_test")
+    val input = readInput(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == 13140)

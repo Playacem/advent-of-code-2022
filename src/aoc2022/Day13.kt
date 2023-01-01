@@ -1,4 +1,6 @@
+package aoc2022
 
+import utils.readInputText
 
 object Day13 {
 
@@ -81,7 +83,7 @@ object Day13 {
 }
 
 fun main() {
-    val day = "Day13"
+    val (year, day) = 2022 to "Day13"
 
     fun part1(input: String): Int {
         val parsed = Day13.parseInput(input)
@@ -114,8 +116,8 @@ fun main() {
         return left * right
     }
 
-    val testInput = readInputText("${day}_test")
-    val input = readInputText(day)
+    val testInput = readInputText(year, "${day}_test")
+    val input = readInputText(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == 13)

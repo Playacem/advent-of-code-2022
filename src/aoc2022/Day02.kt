@@ -1,3 +1,7 @@
+package aoc2022
+
+import utils.readInput
+
 private enum class RPS(val opponentLabel: String, val ourLabel: String, val selectionValue: Int) {
     ROCK("A", "X", 1),
     PAPER("B", "Y", 2),
@@ -17,7 +21,6 @@ fun main() {
         return RPS.values().find { it.match(s) } ?: error("Invalid string: '$s'")
     }
 
-    fun String.asRPS() = parseDecision(this)
     fun Char.asRPS() = parseDecision(this.toString())
 
     fun calculateMatchValue(match: Match): Int {
@@ -66,11 +69,11 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day02_test")
+    val testInput = readInput(2022, "Day02_test")
     check(part1(testInput) == 15)
     check(part2(testInput) == 12)
 
-    val input = readInput("Day02")
+    val input = readInput(2022, "Day02")
     println(part1(input))
     println(part2(input))
 }

@@ -1,5 +1,9 @@
-import Day08.calculateScore
-import Day08.isNotVisible
+package aoc2022
+
+import aoc2022.Day08.calculateScore
+import aoc2022.Day08.isNotVisible
+import utils.createDebug
+import utils.readInput
 
 object Day08 {
     data class TreeView(
@@ -40,7 +44,7 @@ object Day08 {
     }
 }
 fun main() {
-    val day = "Day08"
+    val (year, day) = 2022 to "Day08"
 
     fun List<List<Int>>.getColumnValues(index: Int): List<Int> {
         return this.map { it[index] }
@@ -75,7 +79,7 @@ fun main() {
             right = rightOfTarget,
             top = topOfTarget,
             bottom = bottomOfTarget,
-            rowIndex =  row,
+            rowIndex = row,
             columnIndex = column
         )
     }
@@ -124,8 +128,8 @@ fun main() {
         return res.flatten().maxOf { it.calculateScore().also { score -> debug { "$it: $score" } } }
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year, "${day}_test")
+    val input = readInput(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput, debugActive = true) == 21)

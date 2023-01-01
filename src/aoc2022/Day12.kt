@@ -1,3 +1,6 @@
+package aoc2022
+
+import utils.readInput
 import java.util.*
 import kotlin.math.abs
 
@@ -139,7 +142,7 @@ private object Day12 {
 
 
 fun main() {
-    val day = "Day12"
+    val (year, day) = 2022 to "Day12"
 
     fun part1(input: List<String>): Int {
         val elevationMap = Day12.parseInput(input)
@@ -166,8 +169,8 @@ fun main() {
         return minList.size - 1
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year, "${day}_test")
+    val input = readInput(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == 31)

@@ -1,3 +1,7 @@
+package aoc2022
+
+import utils.createDebug
+import utils.readInput
 import java.util.*
 
 object Day07 {
@@ -81,7 +85,7 @@ object Day07 {
 }
 
 fun main() {
-    val day = "Day07"
+    val (year, day) = 2022 to "Day07"
 
     fun part1(input: List<String>, debugActive: Boolean = false): Long {
         val debug = createDebug(debugActive)
@@ -112,8 +116,8 @@ fun main() {
         return res
     }
 
-    val testInput = readInput("${day}_test")
-    val input = readInput(day)
+    val testInput = readInput(year, "${day}_test")
+    val input = readInput(year, day)
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput, debugActive = true) == 95_437L)

@@ -1,3 +1,7 @@
+package aoc2022
+
+import utils.readInput
+
 object Day05 {
     override fun toString(): String {
         return this.javaClass.simpleName
@@ -99,8 +103,8 @@ fun main() {
         return Day05.StorageStack(is9001 = true).loadData(input).displayStacks().calculateMessage()
     }
 
-    val testInput = readInput("${Day05}_test")
-    val input = readInput(Day05.toString())
+    val testInput = readInput(2022, "${Day05}_test")
+    val input = readInput(2022, Day05.toString())
 
     // test if implementation meets criteria from the description, like:
     check(part1(testInput) == "CMZ")
