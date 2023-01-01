@@ -43,6 +43,10 @@ fun lcm(a: Long, b: Long): Long = (a * b) / gcd(a, b)
  */
 fun Iterable<Long>.lcm(): Long = reduce(::lcm)
 
+fun <T> List<T>.peek(consumer: (T) -> Unit): List<T> = this.map {
+    consumer(it)
+    it
+}
 
 
 fun createDebug(debug: Boolean): (() -> String) -> Unit {
